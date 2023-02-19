@@ -2,7 +2,7 @@ from collections import Counter
 
 
 def is_in(card_set, find_set):
-    ans = []s
+    ans = []
     counter = Counter(card_set)
     for find_num in find_set:
         ans.append(counter[find_num])
