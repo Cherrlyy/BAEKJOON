@@ -1,15 +1,7 @@
-def get_area(n, start_papers):
-    a, b = 10, 10
-    overlap = 0
-    for i in range(n):
-        for j in range(i+1, n):
-            diff_x = abs(start_papers[i][0] - start_papers[j][0])
-            diff_y = abs(start_papers[i][1] - start_papers[j][1])
-            if diff_x < 10 and diff_y < 10:
-                overlap = (10 - diff_x) * (10 - diff_y)
+from itertools import permutations
 
-    ans = n*a*b - overlap
-    return ans
+def get_area(n, start_papers):
+
 
 
     # x나 y가 10이상씩 간격을 가질 것.
@@ -22,7 +14,17 @@ def get_area(n, start_papers):
 if __name__ == '__main__':
     n = int(input()) # 색종이 수
 
+    area = n * 10 * 10
+
+    rl = permutations(starts)
+
+    
+
 
     # 종이 시작 위치 입력 받기
-    start_papers = [list(map(int, input().split())) for i in range(n)]
-    print(get_area(n, start_papers))
+    # 종이 전부 더하기
+    # 겹친 부분 지우기
+    # x 끼리는 10 이상 차이
+    # y 끼리는 10 이상 차이
+    # 둘 중 하나만 만족하면 됨
+    10 - (y 시작점 차이) * 10 - (x 시작점 차이 )
