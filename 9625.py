@@ -1,17 +1,13 @@
-def a(str, n):
-    if n == 0:
-        return str
-    tmp = ''
-    for i in range(len(str)):
-        if str[i] == 'B':
-            tmp+='BA'
-        else:
-            tmp+='B'
-    n-=1
-    return a(tmp, n)
+def BABBA(k):
+    dp = [[0, 0] for i in range(k+1)]
+    dp[0] = [1, 0]
+    for i in range(1, k+1):
+        a = dp[i-1][1]
+        b = dp[i-1][0] + dp[i-1][1]
+        dp[i] = [a, b]
 
+    return dp[k]
 
-n = int(input())
-ans = a('A', n)
-print(ans.count('A'), end=' ')
-print(ans.count('B'))
+if __name__ == '__main__':
+    k = int(input())
+    print(*BABBA(k))

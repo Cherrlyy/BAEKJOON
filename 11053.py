@@ -1,16 +1,18 @@
-def subsequence(n, a):
-    dp = [1 for x in range(n)]
-    print(dp)
-    pre = a[0]
-    for i in range(1, n):
-        if a[i] > pre:
-            dp[i] = dp[i-1] + 1
-            pre = a[i]
-        else:
-            dp[i] = dp[i-1]
-        print(dp[i])
+def subsequence(n, l):
+    dp = [0 for i in range(n)]
+    dp[0] = 1
 
-    return dp[n-1]
+    for i in range(1, n):
+        tmp = []
+        for j in range(i-1, -1, -1):
+            if l[i] > l[j]:
+                tmp.append(dp[j]+1)
+        if len(tmp) == 0:
+            dp[i] = 1
+        else:
+            dp[i] = max(tmp)
+
+    return max(dp)
 
 
 if __name__ == '__main__':
