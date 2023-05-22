@@ -1,18 +1,13 @@
-import copy
-
-
-def sequence_sum(n, l):
-    a = copy.deepcopy(l)
+def part_sequence():
+    dp = l[:]
     for i in range(1, n):
-        a[i] = max(a[i-1]+l[i], a[i])
+        dp[i] = max(dp[i-1]+l[i], l[i])
+    return max(dp)
 
 
-    return m
+
 
 if __name__ == '__main__':
     n = int(input())
     l = list(map(int, input().split()))
-
-    print(sequence_sum(n, l))
-
-
+    print(part_sequence())
