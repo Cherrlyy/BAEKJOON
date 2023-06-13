@@ -26,3 +26,8 @@ if __name__ == '__main__':
         graph[b].append(a)
 
     print(count_infect())
+
+
+# 양방향 그래프에 bfs 문제.
+# dfs는 다시 위로 올라오는데 이번 문제는 숫자만 세면 되므로 다시 올라올 필요가 없다.
+# 즉 dfs는 낭비.
