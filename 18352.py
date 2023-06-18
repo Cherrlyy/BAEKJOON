@@ -30,3 +30,7 @@ if __name__ == '__main__':
     else:
         cities.sort()
         print(*cities, sep='\n')
+
+
+# bfs로 풀어야 좋은 이유: 그래프로 이어져있으며 같은 거리에서 판단해야 하는 문제이므로,
+# 깊이별로 판단이 가능한 bfs 알고리즘이 유리하다.
