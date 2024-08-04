@@ -10,7 +10,4 @@ for i in range(t):
         else:
             break
     ans = tmp[b%len(tmp)-1]
-    if ans == "0":
-        print(10)
-    else:
-        print(int(ans))
+    print(ans if ans != "0" else 10)
